@@ -22,3 +22,38 @@ body{background:var(--paper);color:var(--ink)}header{background:#101814f5;border
 #studio .studio-item figcaption>span{font-size:13px;letter-spacing:1.5px}
 #studio .studio-item h3{font-size:28px;line-height:1.5;margin-top:10px}
 @media(max-width:620px){#studio .studio-grid{gap:36px}#studio .studio-item h3{font-size:23px}#studio .studio-item figcaption>span{font-size:12px}}
+
+.booking-honey{display:none!important}.quick-booking .booking-consent{display:flex;gap:10px;align-items:flex-start;font-size:11px;line-height:1.8;margin:10px 0}.booking-consent input{width:17px;height:17px;min-height:0;flex:0 0 auto;margin-top:4px;accent-color:var(--lime)}.booking-consent a{text-decoration:underline;text-underline-offset:3px}
+
+/* Larger, readable type across the homepage. */
+body{font-size:17px;line-height:1.8}
+body .logo{font-size:40px;letter-spacing:-1.6px}
+body .logo small{font-size:12px;letter-spacing:2.8px;margin-top:10px}
+body header{min-height:106px}
+body .main-navigation .nav-group>summary{font-size:15px}
+body .main-navigation .nav-submenu a,body .nav-button,body .menu-toggle{font-size:15px}
+body .hero .studio-name{font-size:28px;font-weight:600;line-height:1.6;margin-bottom:24px}
+body .hero-copy>.eyebrow{font-size:16px;line-height:1.8;letter-spacing:1.8px}
+body .hero .equipment-line{font-size:20px;letter-spacing:2px}
+body .hero-copy .lead{font-size:18px;line-height:1.9}
+body .hero-copy .hero-hours,body .hero .hero-book-link{font-size:16px;line-height:1.9}
+body .eyebrow{font-size:14px;line-height:1.8}
+body h2{font-size:clamp(32px,3.7vw,48px)}
+body h3{font-size:26px;line-height:1.5}
+body main .section p:not(.eyebrow),body .card p,body .journal-card p,body .info-columns p,body .faq-list details p,body .product-guide article p{font-size:17px;line-height:1.95}
+body .principles,body .tag,body .card-top{font-size:14px;line-height:1.8}
+body .button,body .button .button-label,body .direction-button{font-size:16px;line-height:1.6}
+body .service-strip>a{font-size:18px}body .service-strip small{font-size:15px}
+body .quick-booking h2{font-size:32px}body .quick-booking .booking-intro{font-size:16px}
+body .quick-booking label,body .quick-booking legend,body .quick-booking summary{font-size:16px;line-height:1.8}
+body .quick-booking input,body .quick-booking select,body .quick-booking textarea{font-size:16px}
+body .quick-booking .booking-notice,body .quick-booking .booking-consent,body .quick-booking #status{font-size:14px;line-height:1.8}
+body .booking-phone,body .floating-contact{font-size:16px}
+body .equipment-summary h3{font-size:24px}body .equipment-summary p:not(.eyebrow){font-size:17px}
+body #studio .studio-item h3{font-size:32px}body #studio .studio-item figcaption>span{font-size:16px}
+body .visit-details dt{font-size:15px}body .visit-details dd{font-size:18px}body .visit-phone{font-size:25px}
+body .faq-list summary,body .news-section summary{font-size:19px}
+body .business-details p,body .business-details small,body .legal-links a{font-size:14px;line-height:1.9}
+body .contact-actions p{font-size:16px}
+@media(max-width:1080px){body .main-navigation .nav-group>summary,body .main-navigation .nav-submenu a{font-size:17px}body .hero{grid-template-columns:1fr;gap:36px}body .hero-copy{align-items:flex-start;text-align:left;padding:0}body .quick-booking{width:100%;max-width:720px}}
+@media(max-width:620px){body{font-size:16px}body header{min-height:94px}body header .logo{font-size:36px}body .logo small{font-size:11px}body .hero-copy>.eyebrow{font-size:15px;letter-spacing:1.3px;max-width:100%}body .hero .studio-name{font-size:26px}body .hero .equipment-line{font-size:18px}body .hero-copy .lead{font-size:17px}body .hero-copy .hero-hours{font-size:15px}body .quick-booking{padding:25px 18px}body .quick-booking h2{font-size:29px}body .quick-booking .form-row{grid-template-columns:1fr}body .quick-booking .check-grid{grid-template-columns:1fr}body .quick-booking .check-grid label{min-height:40px}body #studio .studio-item h3{font-size:27px}body #studio .studio-item figcaption>span{font-size:14px}body .equipment-summary h3{font-size:23px}body .mobile-contact a{font-size:16px}body .business-details p{overflow-wrap:anywhere}}

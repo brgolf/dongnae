@@ -31,21 +31,23 @@ document.querySelectorAll('[data-program]').forEach(card => card.addEventListene
  form.querySelectorAll('[name="items"]').forEach(input=>{input.checked=input.value===item;});
  form.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
 }));
-form.addEventListener('submit',async event => {
- event.preventDefault();
+form.addEventListener('submit', event => {
  const name = form.elements.name.value.trim();
- if(!name){form.elements.name.setCustomValidity('성함을 입력해 주세요.');form.elements.name.reportValidity();return;}
+ if (!name) {event.preventDefault();form.elements.name.setCustomValidity('성함을 입력해 주세요.');form.elements.name.reportValidity();return;}
  const visit = new Date(`${dateInput.value}T${timeInput.value}:00+09:00`);
- if(dateInput.value<seoulToday() || !Number.isFinite(visit.getTime()) || visit<=new Date()) {updateTimes();status.textContent='현재 이후의 방문 일시를 선택해 주세요.';return;}
+ const day = visit.getUTCDay();
+ const closing = day === 0 || day === 6 ? '18:00' : '20:00';
+ if (dateInput.value < seoulToday() || !Number.isFinite(visit.getTime()) || visit <= new Date() || timeInput.value < '11:00' || timeInput.value >= closing) {
+  event.preventDefault();updateTimes();status.textContent='영업시간 내의 현재 이후 방문 일시를 선택해 주세요.';return;
+ }
  const data = new FormData(form);
- const text = `바른골프피팅센터 동래점 예약 문의\n성함: ${name}\n연락처: ${data.get('phone')}\n희망 방문: ${data.get('date')} ${data.get('time')}\n피팅 품목: ${data.getAll('items').join(', ') || '상담 후 결정'}\n사용 클럽: ${data.get('specs').trim() || '미입력'}\n주요 고민: ${data.getAll('concerns').join(', ') || '미입력'}\n전달사항: ${data.get('message').trim() || '없음'}\n※ 매장 확인 후 예약 확정`;
- try {await navigator.clipboard.writeText(text);status.textContent='예약 내용을 복사했습니다. 매장에 아직 전송되지 않았습니다. 카카오톡 상담창에 붙여넣거나 전화로 예약을 확인해 주세요.';}
- catch {const copy=document.getElementById('booking-copy');copy.hidden=false;copy.value=text;copy.focus();copy.select();status.textContent='아래 내용을 직접 복사해 주세요. 매장에 전송되지 않았습니다.';}
+ document.getElementById('reservation-summary').value = `[바른골프피팅 동래점] 새로운 시타/피팅 예약이 접수되었습니다.\n- 예약자: ${name} 님\n- 연락처: ${data.get('phone')}\n- 희망일시: ${data.get('date')} ${data.get('time')} (한국 시간)\n- 희망품목: ${data.getAll('items').join(', ') || '상담 후 결정'}\n- 현재 사용 클럽: ${data.get('specs').trim() || '미입력'}\n- 주요 고민: ${data.getAll('concerns').join(', ') || '미입력'}\n- 사전 전달사항: ${data.get('message').trim() || '없음'}`;
+ status.textContent='메일 접수 서비스로 이동합니다. 다음 화면의 보안 확인을 완료해 주세요.';
+ // Allow the native POST. Never claim email delivery before the service responds.
 });
 const channel = window.BR_GOLF_CONFIG?.kakaoChannelUrl;
 if(channel && /^https:\/\/pf\.kakao\.com\/[A-Za-z0-9_\/-]+$/.test(channel)) {
  const link=document.getElementById('floating-contact');link.href=channel;link.textContent='카카오톡 1:1 상담 ↗';link.classList.add('kakao');link.target='_blank';link.rel='noopener noreferrer';
- document.getElementById('booking-notice').textContent='작성한 예약 내용을 복사한 후 카카오톡 상담창에 붙여넣어 보내주세요. 자동 전송되지 않으며, 방문 일정은 매장 확인 후 확정됩니다.';
 }
 const photoDialog = document.getElementById('photo-dialog');
 document.querySelectorAll('[data-photo]').forEach(button => button.addEventListener('click', () => {

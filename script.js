@@ -27,15 +27,12 @@ function updateTimes() {
 }
 updateTimes();
 dateInput.addEventListener('change',updateTimes);
-form.elements.name.addEventListener('input',event=>event.target.setCustomValidity(''));
 document.querySelectorAll('[data-program]').forEach(card => card.addEventListener('click', () => {
  const item = {'드라이버 피팅':'스윙분석','아이언 피팅':'스윙분석','풀백 피팅':'클럽점검'}[card.dataset.program];
  form.querySelectorAll('[name="items"]').forEach(input=>{input.checked=input.value===item;});
  form.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
 }));
 form.addEventListener('submit', event => {
- const name = form.elements.name.value.trim();
- if (!name) {event.preventDefault();form.elements.name.setCustomValidity('성함을 입력해 주세요.');form.elements.name.reportValidity();return;}
  const visit = new Date(`${dateInput.value}T${timeInput.value}:00+09:00`);
  const day = visit.getUTCDay();
  const closing = day === 0 || day === 6 ? '18:00' : '20:00';
@@ -43,7 +40,7 @@ form.addEventListener('submit', event => {
   event.preventDefault();updateTimes();status.textContent='영업시간 내의 현재 이후 방문 일시를 선택해 주세요.';return;
  }
  const data = new FormData(form);
- document.getElementById('reservation-summary').value = `[바른골프피팅 동래점] 새로운 시타/피팅 예약이 접수되었습니다.\n- 예약자: ${name} 님\n- 연락처: ${data.get('phone')}\n- 희망일시: ${data.get('date')} ${data.get('time')} (한국 시간)\n- 희망품목: ${data.getAll('items').join(', ') || '상담 후 결정'}\n- 현재 사용 클럽: ${data.get('specs').trim() || '미입력'}\n- 주요 고민: ${data.getAll('concerns').join(', ') || '미입력'}\n- 사전 전달사항: ${data.get('message').trim() || '없음'}`;
+ document.getElementById('reservation-summary').value = `[바른골프피팅 동래점] 새로운 시타/피팅 예약이 접수되었습니다.\n- 연락처: ${data.get('phone')}\n- 희망일시: ${data.get('date')} ${data.get('time')} (한국 시간)\n- 희망품목: ${data.getAll('items').join(', ') || '상담 후 결정'}\n- 현재 사용 클럽: ${data.get('specs').trim() || '미입력'}\n- 주요 고민: ${data.getAll('concerns').join(', ') || '미입력'}\n- 사전 전달사항: ${data.get('message').trim() || '없음'}`;
  status.textContent='메일 접수 서비스로 이동합니다. 다음 화면의 보안 확인을 완료해 주세요.';
  // Allow the native POST. Never claim email delivery before the service responds.
 });

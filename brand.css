@@ -24,3 +24,8 @@ body .naver-booking:hover,body .button.naver-booking:hover{background:#02AC4D}
 body .kakao-chat,body .kakao-direction{background:#FEE500;color:#191600}
 body .naver-direction{background:#03C75A;color:#fff}
 :focus-visible{outline-color:#D7C29E}
+
+/* Keep the complete driver head visible in its product card. */
+.program-photo img.driver-product-photo{object-fit:contain;background:#111713}
+
+.program-photo img.fullbag-product-photo{object-fit:contain;background:#18241c}

@@ -1,0 +1,26 @@
+/* Warm ivory / Pretendard identity. Keep the larger reading sizes. */
+:root{--ink:#F0E9DD;--muted:#BEC1BC;--lime:#D7C29E;--paper:#101814;--green:#24372D}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI','Malgun Gothic',sans-serif;color:var(--ink);letter-spacing:-.015em}
+body input,body select,body textarea,body button{font-family:inherit}
+body h1,body h2,body h3,body .logo,body .hero .studio-name{color:#F0E9DD;font-weight:600}
+body h1{letter-spacing:-.04em}body h2,body h3{letter-spacing:-.025em}
+body h1 em,body .hero h1 em{color:#F0E9DD}
+body h2 span{color:#BEC1BC}
+body .eyebrow,body .hero-copy>.eyebrow,body .hero .equipment-line,body .hero-book-link,body .hero-copy .hero-book-link,body .equipment-summary .eyebrow{color:#D7C29E}
+body main .section p:not(.eyebrow),body .hero-copy .lead,body .hero-copy .hero-hours,body .card p,body .journal-card p,body .faq-list details p,body .product-guide article p,body .equipment-summary p:not(.eyebrow),body .info-columns p,body .contact p,body .contact .note{color:#BEC1BC}
+body .principles,body .card-top,body #studio .studio-item figcaption>span{color:#CBB998}
+body .button,body form .button,body .hero-copy>.button,body .contact-actions .button,body .journal-card .button,body .nav-button{background:#D7C29E;color:#19251E;font-weight:600;border-color:#D7C29E}
+body .button:hover,body form .button:hover{background:#E3D2B4}
+body .nav-group[open]>summary,body .main-navigation a:hover,body .process em,body .process .heading-icon,body .card .heading-icon,body .visit-phone,body .consult-call,body .booking-phone,body .menu-note>a:not(.button),body .product-guide article>a,body .care-grid a{color:#D7C29E}
+body .quick-booking input,body .quick-booking select,body .quick-booking textarea{color:#F0E9DD;border-color:#657064}
+body .quick-booking input::placeholder,body .quick-booking textarea::placeholder{color:#AEB8AE}
+body .quick-booking .booking-notice,body .quick-booking .booking-consent,body .quick-booking .booking-intro{color:#C5CBC3}
+body .quick-booking .booking-hours,body .quick-booking #status{color:#D7C29E}
+body .business-details strong,body .business-footer .logo{color:#F0E9DD}
+body .business-details p,body .business-details small,body .legal-links a{color:#AEB8AE}
+body .process li{gap:0}body .service-strip>a{gap:14px}
+body .naver-booking,body .button.naver-booking{background:#03C75A;color:white}
+body .naver-booking:hover,body .button.naver-booking:hover{background:#02AC4D}
+body .kakao-chat,body .kakao-direction{background:#FEE500;color:#191600}
+body .naver-direction{background:#03C75A;color:#fff}
+:focus-visible{outline-color:#D7C29E}

@@ -10,10 +10,12 @@ function seoulToday() {
 function updateTimes() {
  dateInput.min = seoulToday();
  const previous = timeInput.value;
- timeInput.replaceChildren(new Option('시간을 선택하세요', ''));
+ timeInput.replaceChildren(new Option(dateInput.value ? '시간을 선택하세요' : '날짜를 먼저 선택하세요', ''));
  if (!/^\d{4}-\d{2}-\d{2}$/.test(dateInput.value)) return;
  const day = new Date(`${dateInput.value}T12:00:00+09:00`).getUTCDay();
  const closing = day === 0 || day === 6 ? 18 : 20;
+ const hours = document.getElementById('booking-hours');
+ if (hours) hours.textContent = `${day === 0 || day === 6 ? '토·일요일' : '평일'} 영업시간 11:00~${closing}:00 · 30분 단위 선택, 마감 30분 전까지 방문 시작 가능`;
  const now = new Date();
  for(let minutes=11*60;minutes<closing*60;minutes+=30) {
   const time = `${String(Math.floor(minutes/60)).padStart(2,'0')}:${String(minutes%60).padStart(2,'0')}`;
@@ -27,7 +29,7 @@ updateTimes();
 dateInput.addEventListener('change',updateTimes);
 form.elements.name.addEventListener('input',event=>event.target.setCustomValidity(''));
 document.querySelectorAll('[data-program]').forEach(card => card.addEventListener('click', () => {
- const item = {'드라이버 피팅':'드라이버','아이언 피팅':'아이언·웨지','풀백 피팅':'전체 점검'}[card.dataset.program];
+ const item = {'드라이버 피팅':'스윙분석','아이언 피팅':'스윙분석','풀백 피팅':'클럽점검'}[card.dataset.program];
  form.querySelectorAll('[name="items"]').forEach(input=>{input.checked=input.value===item;});
  form.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
 }));

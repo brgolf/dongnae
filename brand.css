@@ -166,3 +166,12 @@ body .quick-booking #consult>.button:hover{background:#29493F}
 body .quick-booking>.booking-phone,body .quick-booking .booking-consent a{color:#375B50}
 body .quick-booking #consult{scrollbar-color:#A6B8AE #E7EBE9}
 body .quick-booking :focus-visible{outline-color:#375B50}
+
+/* Empty outlined checkboxes before selection, consistent across browsers. */
+body .quick-booking #consult input[type="checkbox"]{-webkit-appearance:none;appearance:none;width:18px;height:18px;min-height:18px;flex:0 0 18px;margin:0;border:1.5px solid #738B80;border-radius:2px;background:transparent;display:inline-grid;place-content:center;cursor:pointer;vertical-align:middle}
+body .quick-booking #consult input[type="checkbox"]::after{content:'';width:8px;height:4px;border-left:2px solid #FFFFFF;border-bottom:2px solid #FFFFFF;transform:translateY(-1px) rotate(-45deg) scale(0)}
+body .quick-booking #consult input[type="checkbox"]:checked{background:#375B50;border-color:#375B50}
+body .quick-booking #consult input[type="checkbox"]:checked::after{transform:translateY(-1px) rotate(-45deg) scale(1)}
+body .quick-booking #consult input[type="checkbox"]:focus-visible{outline:3px solid #73998A;outline-offset:3px}
+body .quick-booking #consult .booking-consent input[type="checkbox"]{margin-top:4px}
+@media(forced-colors:active){body .quick-booking #consult input[type="checkbox"]{appearance:auto;-webkit-appearance:auto}body .quick-booking #consult input[type="checkbox"]::after{display:none}}

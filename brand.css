@@ -194,6 +194,6 @@ body .quick-booking>.naver-booking{margin-top:9px;min-height:42px;padding:8px 14
 body .quick-booking>.booking-phone{margin-top:7px}
 @media(max-width:620px){body .hero .quick-booking{max-height:calc((100vh - 190px) * .9);max-height:calc((100svh - 190px) * .9);padding:16px 14px}}
 
-/* Match the English introduction and Korean studio name. */
-body .hero .hero-copy>.eyebrow,
-body .hero .hero-copy>.studio-name{font-family:inherit;font-size:clamp(18px,1.8vw,26px);font-weight:600;color:#F0E9DD;letter-spacing:.02em;line-height:1.6;margin:0 0 18px;text-wrap:balance}
+/* Preserve the original English eyebrow style and match the Korean name to it. */
+body .hero .hero-copy>.eyebrow,body .hero .hero-copy>.studio-name{font-family:inherit;font-size:16px;font-weight:600;color:#D7C29E;letter-spacing:1.8px;line-height:1.8;margin:0 0 23px}
+@media(max-width:620px){body .hero .hero-copy>.eyebrow,body .hero .hero-copy>.studio-name{font-size:15px;letter-spacing:1.3px}}

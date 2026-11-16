@@ -152,3 +152,17 @@ body .quick-booking>.booking-phone{color:#2C4936}
 body .quick-booking #consult{scrollbar-color:#B4A386 #E5DDCE}
 body .quick-booking :focus-visible{outline-color:#8C724C}
 body .quick-booking>.naver-booking{background:#03B753;color:#FFFFFF}
+
+/* Selected reservation palette: pearl gray. */
+body .hero .quick-booking{background:#E7EBE9;color:#253A34;border-color:#C0CBC6}
+body .quick-booking>.eyebrow,body .quick-booking .booking-hours{color:#687468}
+body .quick-booking h2,body .quick-booking #consult label,body .quick-booking #consult legend,body .quick-booking #consult summary{color:#253A34}
+body .quick-booking .booking-intro,body .quick-booking .booking-notice,body .quick-booking .booking-consent,body .quick-booking #status{color:#5C6C66}
+body .quick-booking #consult input:not([type="checkbox"]):not([type="hidden"]):not(.booking-honey),body .quick-booking #consult select,body .quick-booking #consult textarea{background:#F9FBFA;color:#253A34;border-color:#C0CBC6}
+body .quick-booking #consult input::placeholder,body .quick-booking #consult textarea::placeholder{color:#5C6C66}
+body .quick-booking #consult select option{background:#F9FBFA;color:#253A34}
+body .quick-booking #consult>.button{background:#375B50;border-color:#375B50;color:#FFFFFF;box-shadow:0 -6px 14px #E7EBE9}
+body .quick-booking #consult>.button:hover{background:#29493F}
+body .quick-booking>.booking-phone,body .quick-booking .booking-consent a{color:#375B50}
+body .quick-booking #consult{scrollbar-color:#A6B8AE #E7EBE9}
+body .quick-booking :focus-visible{outline-color:#375B50}

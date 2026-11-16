@@ -132,3 +132,23 @@ body #care .care-grid article>img{height:600px;max-height:78vh;max-height:78svh}
 
 /* Trim vertical photo margins without shrinking the subjects. */
 body #care .care-grid article>.care-photo-crop{--care-photo-height:min(600px,78svh);height:calc(var(--care-photo-height) * .73);padding:0;overflow:hidden;position:relative;background:#101814;border-radius:24px 24px 0 0}body #care .care-photo-crop>img{display:block;width:100%;height:var(--care-photo-height);max-height:none;object-fit:contain;object-position:center;transform:translateY(calc(var(--care-photo-height) * -.135))}@media(max-width:620px){body #care .care-grid article>.care-photo-crop{--care-photo-height:min(525px,75svh);border-radius:20px 20px 0 0}}
+
+/* Light ivory reservation panel coordinated with the forest-and-champagne theme. */
+body .hero .quick-booking{background:#F0E9DD;color:#213A2D;border:1px solid #D7C29E;box-shadow:0 18px 50px #00000030;border-radius:18px}
+body .quick-booking>.eyebrow{color:#80633D;font-weight:700}
+body .quick-booking h2{color:#213A2D}
+body .quick-booking .booking-intro{color:#586354}
+body .quick-booking #consult label,body .quick-booking #consult legend,body .quick-booking #consult summary{color:#263D30}
+body .quick-booking #consult input:not([type="checkbox"]):not([type="hidden"]):not(.booking-honey),body .quick-booking #consult select,body .quick-booking #consult textarea{background:#FFFCF6;color:#213A2D;border:1px solid #CFC5B4;border-radius:7px;padding:10px 11px;color-scheme:light}
+body .quick-booking #consult input::placeholder,body .quick-booking #consult textarea::placeholder{color:#7A8175}
+body .quick-booking #consult select option{background:#FFFCF6;color:#213A2D}
+body .quick-booking #consult input[type="checkbox"]{accent-color:#31513D}
+body .quick-booking .booking-hours{color:#78603C}
+body .quick-booking .booking-notice,body .quick-booking .booking-consent,body .quick-booking #status{color:#586354}
+body .quick-booking .booking-consent a{color:#31513D}
+body .quick-booking #consult>.button{background:#2C4936;color:#FFF9EE;border:1px solid #2C4936;box-shadow:0 -6px 14px #F0E9DD}
+body .quick-booking #consult>.button:hover{background:#3B5E46}
+body .quick-booking>.booking-phone{color:#2C4936}
+body .quick-booking #consult{scrollbar-color:#B4A386 #E5DDCE}
+body .quick-booking :focus-visible{outline-color:#8C724C}
+body .quick-booking>.naver-booking{background:#03B753;color:#FFFFFF}

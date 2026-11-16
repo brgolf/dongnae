@@ -1,0 +1,56 @@
+name: Daily Naver blog sync and Pages deploy
+on:
+  schedule:
+    - cron: '0 0 * * *' # 09:00 Asia/Seoul
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: blog-sync-and-pages
+  cancel-in-progress: false
+jobs:
+  sync-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Validate sync code
+        run: node --test tests/sync-blog.test.mjs
+      - name: Refresh public blog posts
+        run: node scripts/sync-blog.mjs
+      - name: Save blog changes
+        run: |
+          git add index.html blog-posts.json assets/blog-thumb-* assets/blog-placeholder.svg
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Update Naver blog posts and thumbnails'
+            git push origin HEAD:main
+          fi
+      - name: Prepare public site files
+        run: node scripts/prepare-pages.mjs
+      - name: Upload Pages site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: sync-and-build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the refreshed site
+        id: deployment
+        uses: actions/deploy-pages@v4

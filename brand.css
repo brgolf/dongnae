@@ -125,3 +125,7 @@ body #care .care-grid article>div{padding:25px 28px}
 /* Slightly larger care photos while retaining the full image. */
 body #care .care-grid article>img{height:400px;max-height:52vh;max-height:52svh}
 @media(max-width:620px){body #care .care-grid article>img{height:350px;max-height:50vh;max-height:50svh}}
+
+/* Enlarge care photographs to 1.5 times the previous height. */
+body #care .care-grid article>img{height:600px;max-height:78vh;max-height:78svh}
+@media(max-width:620px){body #care .care-grid article>img{height:525px;max-height:75vh;max-height:75svh}}

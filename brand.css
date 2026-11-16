@@ -29,3 +29,6 @@ body .naver-direction{background:#03C75A;color:#fff}
 .program-photo img.driver-product-photo{object-fit:contain;background:#111713}
 
 .program-photo img.fullbag-product-photo{object-fit:contain;background:#18241c}
+
+/* Monochrome model kit within the main introduction. */
+.hero-model-kit{width:100%;max-width:620px;margin:34px 0 0;padding:16px;background:#050706;border:1px solid #586052;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px #0003}.hero-model-kit img{display:block;width:100%;height:auto;max-height:580px;object-fit:contain}.hero-model-kit figcaption{padding:16px 0 4px;text-align:center;font-size:12px;letter-spacing:2px;color:#D7C29E;line-height:1.6}.hero:has(.hero-model-kit){align-items:start}.hero .quick-booking{align-self:start}@media(max-width:620px){.hero-model-kit{padding:10px;margin-top:28px;border-radius:12px}.hero-model-kit img{max-height:none}.hero-model-kit figcaption{font-size:10px;letter-spacing:1.5px}}

@@ -46,3 +46,6 @@ body .naver-direction{background:#03C75A;color:#fff}
 .philosophy-model-kit[data-head-motion="off"] .philosophy-head-motion{animation:none;transform:none}
 
 @media(prefers-reduced-motion:reduce){.philosophy-model-kit:not([data-head-motion="on"]) .philosophy-head-motion{animation:none;transform:none}}
+
+/* Swing sequence beside the fitting consultation copy. */
+#fitter{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);align-items:center;gap:54px}#fitter .fitter-copy>p:not(.eyebrow){font-size:18px;line-height:1.95;color:#BEC1BC;max-width:720px}#fitter .fitter-copy>a{display:inline-block;font-size:17px;color:#D7C29E;text-decoration:underline;text-underline-offset:5px;margin-top:12px}.fitter-swing{margin:0;justify-self:center;width:100%;max-width:420px;padding:10px;background:#0b1510;border:1px solid #586052;border-radius:18px}.fitter-swing img{display:block;width:100%;height:auto;object-fit:contain;border-radius:10px}@media(max-width:700px){#fitter{grid-template-columns:1fr;gap:30px}.fitter-swing{max-width:420px}#fitter .fitter-copy>p:not(.eyebrow){font-size:17px}}

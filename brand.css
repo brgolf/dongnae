@@ -185,3 +185,11 @@ body #studio .studio-item figcaption>span{font-size:12px;letter-spacing:1.2px}
 body #studio .studio-item h3{font-size:22px;line-height:1.5;margin-top:7px}
 @media(max-width:950px) and (min-width:621px){body #studio .studio-grid{gap:16px}body #studio .studio-photo{height:200px}body #studio .studio-item h3{font-size:19px}}
 @media(max-width:620px){body #studio .studio-grid{grid-template-columns:1fr;gap:26px}body #studio .studio-photo{height:260px;max-height:40svh}body #studio .studio-item h3{font-size:22px}}
+
+/* Slightly shorter reservation panel, retaining readable text. */
+body .hero .quick-booking{max-height:calc((100vh - 150px) * .9);max-height:calc((100svh - 150px) * .9);padding:18px 22px}
+body .quick-booking>.eyebrow{margin-bottom:4px}
+body .quick-booking .booking-intro{margin:5px 0 9px}
+body .quick-booking>.naver-booking{margin-top:9px;min-height:42px;padding:8px 14px}
+body .quick-booking>.booking-phone{margin-top:7px}
+@media(max-width:620px){body .hero .quick-booking{max-height:calc((100vh - 190px) * .9);max-height:calc((100svh - 190px) * .9);padding:16px 14px}}

@@ -203,3 +203,12 @@ body .hero .equipment-logos{display:flex;align-items:center;flex-wrap:wrap;gap:1
 
 /* User-supplied QED brand mark, original square canvas preserved. */
 .equipment-brand-qed{background:#262626}.equipment-brand-qed>img{width:200px;height:200px;max-width:none;object-fit:contain;flex-shrink:0}@media(max-width:620px){.equipment-brand-qed>img{width:142px;height:142px}}@media(max-width:360px){.equipment-brand-qed>img{width:128px;height:128px}}
+
+/* Half-size equipment brand badges and their original-proportion images. */
+body .hero .equipment-logos{gap:7px}
+.equipment-brand{width:108px;height:38px;border-radius:5px}
+.equipment-brand-qed>img{width:100px;height:100px}
+.flightscope-logo-window{width:105px;height:22.5px}
+.flightscope-logo-window>img{width:105px}
+@media(max-width:620px){body .hero .equipment-logos{gap:5px}.equipment-brand{width:77px;height:32px}.equipment-brand-qed>img{width:71px;height:71px}.flightscope-logo-window{width:75px;height:16px}.flightscope-logo-window>img{width:75px}}
+@media(max-width:360px){.equipment-brand{width:69px}.equipment-brand-qed>img{width:64px;height:64px}.flightscope-logo-window{width:67px;height:14.5px}.flightscope-logo-window>img{width:67px}}

@@ -220,3 +220,7 @@ body .hero .equipment-logos{margin-top:22px;margin-bottom:30px;align-self:flex-s
 /* Additional separation requested below the hero headline. */
 body .hero .equipment-logos{margin-top:52px}
 @media(max-width:620px){body .hero .equipment-logos{margin-top:40px}}
+
+/* Move the equipment logo row another 30px lower. */
+body .hero .equipment-logos{margin-top:82px}
+@media(max-width:620px){body .hero .equipment-logos{margin-top:70px}}

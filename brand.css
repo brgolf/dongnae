@@ -240,3 +240,7 @@ body .hero::after{content:'';position:absolute;inset:0;z-index:-1;background:lin
 @keyframes storefront-pan{0%{transform:scale(1.04) translate3d(-1%,0,0)}50%{transform:scale(1.1) translate3d(0,-.7%,0)}100%{transform:scale(1.16) translate3d(1%,0,0)}}
 @media(max-width:620px){body .hero::before{animation-duration:28s}}
 @media(prefers-reduced-motion:reduce){body .hero::before{animation:none;transform:scale(1.04);will-change:auto}}
+
+/* Double the storefront background animation speed. */
+body .hero::before{animation-duration:12s}
+@media(max-width:620px){body .hero::before{animation-duration:14s}}

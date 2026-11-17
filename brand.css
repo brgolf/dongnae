@@ -282,3 +282,7 @@ body .main-navigation .nav-group>summary,body .main-navigation>.nav-blog-direct{
 
 /* Equipment brand marks below the studio philosophy text. */
 body .about .philosophy-equipment-logos{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:30px;margin-bottom:0}@media(max-width:620px){body .about .philosophy-equipment-logos{gap:10px;margin-top:24px}}
+
+/* Double the speed of the one-way storefront entrance approach. */
+body .hero::before{animation-duration:8s}
+@media(max-width:620px){body .hero::before{animation-duration:9s}}

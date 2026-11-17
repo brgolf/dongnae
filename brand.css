@@ -264,3 +264,12 @@ body .hero::before{transform-origin:50% 55%;animation:storefront-approach 16s li
 @keyframes storefront-approach{from{transform:translate3d(0,0,0) scale(.9)}to{transform:translate3d(0,0,0) scale(1.65)}}
 @media(max-width:620px){body .hero::before{animation-duration:18s}}
 @media(prefers-reduced-motion:reduce){body .hero::before{animation:none;transform:scale(.9);will-change:auto}}
+
+/* Button-style main navigation without arrow decorations. */
+body .main-navigation{gap:10px}
+body .main-navigation .nav-group>summary::after{content:none;display:none}
+body .main-navigation .nav-group>summary,body .main-navigation .nav-blog-direct{display:flex;align-items:center;justify-content:center;min-height:43px;padding:10px 16px;border:1px solid #8D826866;border-radius:9px;background:#20342B;color:#F0E9DD;font-size:15px;font-weight:600;line-height:1.4;text-decoration:none;cursor:pointer}
+body .main-navigation .nav-group>summary:hover,body .main-navigation .nav-blog-direct:hover,body .main-navigation .nav-group[open]>summary{background:#D7C29E;color:#213A2D;border-color:#D7C29E}
+body .main-navigation .nav-group>summary:focus-visible,body .main-navigation .nav-blog-direct:focus-visible{outline:2px solid #D7C29E;outline-offset:3px}
+body .main-navigation .nav-submenu{margin-top:8px}
+@media(max-width:1080px){body .main-navigation{gap:9px}body .main-navigation .nav-group{border-bottom:0}body .main-navigation .nav-group>summary,body .main-navigation .nav-blog-direct{justify-content:flex-start;min-height:46px;padding:12px 16px;font-size:16px}body .main-navigation .nav-submenu{margin:4px 0 0;padding-top:6px}}

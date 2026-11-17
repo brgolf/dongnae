@@ -279,3 +279,6 @@ body .main-navigation{align-items:center}
 body .main-navigation>.nav-group,body .main-navigation>.nav-blog-direct{margin:0;align-self:center}
 body .main-navigation .nav-group>summary,body .main-navigation>.nav-blog-direct{box-sizing:border-box;height:43px;min-height:43px;line-height:21px}
 @media(max-width:1080px){body .main-navigation{align-items:stretch}body .main-navigation>.nav-group,body .main-navigation>.nav-blog-direct{align-self:stretch}body .main-navigation .nav-group>summary,body .main-navigation>.nav-blog-direct{height:46px;min-height:46px}}
+
+/* Equipment brand marks below the studio philosophy text. */
+body .about .philosophy-equipment-logos{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:30px;margin-bottom:0}@media(max-width:620px){body .about .philosophy-equipment-logos{gap:10px;margin-top:24px}}

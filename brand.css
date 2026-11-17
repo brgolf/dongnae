@@ -258,3 +258,9 @@ body .hero::before{background-size:contain;background-color:#101814;background-p
 /* Double the current storefront zoom speed. */
 body .hero::before{animation-duration:6s}
 @media(max-width:620px){body .hero::before{animation-duration:7s}}
+
+/* Continuous approach toward the central entrance, without reverse or loop reset. */
+body .hero::before{transform-origin:50% 55%;animation:storefront-approach 16s linear 1 both;will-change:transform}
+@keyframes storefront-approach{from{transform:translate3d(0,0,0) scale(.9)}to{transform:translate3d(0,0,0) scale(1.65)}}
+@media(max-width:620px){body .hero::before{animation-duration:18s}}
+@media(prefers-reduced-motion:reduce){body .hero::before{animation:none;transform:scale(.9);will-change:auto}}

@@ -244,3 +244,8 @@ body .hero::after{content:'';position:absolute;inset:0;z-index:-1;background:lin
 /* Double the storefront background animation speed. */
 body .hero::before{animation-duration:12s}
 @media(max-width:620px){body .hero::before{animation-duration:14s}}
+
+/* Start with a wider storefront view and zoom in more noticeably. */
+body .hero::before{inset:0;transform:scale(1);transform-origin:50% 48%}
+@keyframes storefront-pan{0%{transform:scale(1) translate3d(0,0,0)}50%{transform:scale(1.13) translate3d(.3%,-.5%,0)}100%{transform:scale(1.28) translate3d(.8%,-1%,0)}}
+@media(prefers-reduced-motion:reduce){body .hero::before{transform:scale(1)}}

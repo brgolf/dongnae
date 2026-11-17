@@ -216,3 +216,7 @@ body .hero .equipment-logos{gap:7px}
 /* Give the equipment logos a calmer position below the main headline. */
 body .hero .equipment-logos{margin-top:22px;margin-bottom:30px;align-self:flex-start}
 @media(max-width:620px){body .hero .equipment-logos{margin-top:16px;margin-bottom:25px}}
+
+/* Additional separation requested below the hero headline. */
+body .hero .equipment-logos{margin-top:52px}
+@media(max-width:620px){body .hero .equipment-logos{margin-top:40px}}

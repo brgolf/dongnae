@@ -56,3 +56,12 @@ document.querySelectorAll('[data-photo]').forEach(button => button.addEventListe
 document.querySelector('.photo-close').addEventListener('click',()=>photoDialog.close());
 photoDialog.addEventListener('click',event=>{if(event.target===photoDialog){const box=photoDialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)photoDialog.close();}});
 photoDialog.addEventListener('close',()=>document.body.classList.remove('photo-open'));
+
+// Clicking the header brand restarts the home page and its entrance animation.
+document.querySelector('[data-home-refresh]')?.addEventListener('click',event=>{
+ if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+ event.preventDefault();
+ const home=new URL('index.html',window.location.href);
+ if(window.location.href===home.href)window.location.reload();
+ else window.location.assign(home.href);
+});

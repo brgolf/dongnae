@@ -36,3 +36,10 @@ FormSubmit은 공식 문서에서 제출 내용을 30일 보관한다고 안내�
 블로그의 전체 글 수와 수집한 글 수가 일치하지 않거나 목록 조회에 실패하면 기존 HTML 목록을 갱신하지 않고 작업을 실패로 종료합니다. 신규 글의 썸네일만 가져오지 못하면 기존 이미지 또는 대표 아이콘을 사용합니다. 비공개·삭제 글은 완전한 공개 목록이 확인된 경우 다음 실행에서 제거됩니다. 원문 제목과 외부 URL은 HTML로 실행되지 않도록 처리합니다.
 
 네이버 공개 목록의 형식이 변경되면 수집 코드 수정이 필요할 수 있습니다. 별도 API 키·카카오 키·블로그 비밀번호는 사용하지 않습니다.
+
+## dongnae 저장소로 이전
+운영 저장소: https://github.com/brgolf/dongnae
+운영 홈페이지 주소: https://brgolf.github.io/dongnae/
+예약 완료 반환 주소를 새 홈페이지 경로로 변경했습니다. 메인 메뉴, 사진, GIF, 지도, 블로그 글 목록, 로고와 일일 갱신 workflow를 포함합니다.
+새 저장소에서 Settings → Pages → Source를 GitHub Actions로 설정한 뒤 Actions의 Daily Naver blog sync and Pages deploy를 실행해 최초 배포를 확인하세요. 예약 메일의 수신 인증은 기존 이메일을 사용하며, 새 홈페이지에서 테스트 접수를 확인해 주세요.
+기존 fitting-works 원격은 fitting-works-backup으로 보관합니다. 새 수정본의 업로드 대상 origin은 dongnae입니다.

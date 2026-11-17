@@ -224,3 +224,11 @@ body .hero .equipment-logos{margin-top:52px}
 /* Move the equipment logo row another 30px lower. */
 body .hero .equipment-logos{margin-top:82px}
 @media(max-width:620px){body .hero .equipment-logos{margin-top:70px}}
+
+/* Balance FlightScope's wider wordmark with QED and lower the row 30px. */
+body .hero .equipment-logos{margin-top:112px;gap:12px}
+.equipment-brand-flightscope{width:142px;height:46px}
+.equipment-brand-flightscope .flightscope-logo-window{width:138px;height:30px}
+.equipment-brand-flightscope .flightscope-logo-window>img{width:138px}
+@media(max-width:620px){body .hero .equipment-logos{margin-top:100px;gap:10px}.equipment-brand-flightscope{width:108px;height:38px}.equipment-brand-flightscope .flightscope-logo-window{width:104px;height:23px}.equipment-brand-flightscope .flightscope-logo-window>img{width:104px}}
+@media(max-width:360px){.equipment-brand-flightscope{width:98px}.equipment-brand-flightscope .flightscope-logo-window{width:94px;height:21px}.equipment-brand-flightscope .flightscope-logo-window>img{width:94px}}

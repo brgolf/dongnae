@@ -286,3 +286,6 @@ body .about .philosophy-equipment-logos{display:flex;align-items:center;flex-wra
 /* Double the speed of the one-way storefront entrance approach. */
 body .hero::before{animation-duration:8s}
 @media(max-width:620px){body .hero::before{animation-duration:9s}}
+
+/* Short measuring-method descriptions beneath the philosophy logos. */
+.measurement-methods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}.measurement-card{background:#20342B;border:1px solid #D7C29E55;border-top:3px solid #D7C29E;border-radius:12px;padding:22px 20px}body .about .measurement-card .method-brand{font-size:12px!important;font-weight:600;letter-spacing:1.4px;color:#D7C29E!important;margin:0 0 9px}body .about .measurement-card h3{font-size:22px;line-height:1.45;margin:0 0 12px;color:#F0E9DD}body main .about.section .measurement-card p:not(.method-brand){font-size:16px;line-height:1.8;color:#BEC1BC;margin:0}.measurement-card p br{display:none}@media(max-width:620px){.measurement-methods{grid-template-columns:1fr;gap:12px;margin-top:20px}.measurement-card{padding:20px}body .about .measurement-card h3{font-size:21px}}

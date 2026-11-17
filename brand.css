@@ -232,3 +232,11 @@ body .hero .equipment-logos{margin-top:112px;gap:12px}
 .equipment-brand-flightscope .flightscope-logo-window>img{width:138px}
 @media(max-width:620px){body .hero .equipment-logos{margin-top:100px;gap:10px}.equipment-brand-flightscope{width:108px;height:38px}.equipment-brand-flightscope .flightscope-logo-window{width:104px;height:23px}.equipment-brand-flightscope .flightscope-logo-window>img{width:104px}}
 @media(max-width:360px){.equipment-brand-flightscope{width:98px}.equipment-brand-flightscope .flightscope-logo-window{width:94px;height:21px}.equipment-brand-flightscope .flightscope-logo-window>img{width:94px}}
+
+/* Subtle storefront background motion; foreground content stays still. */
+body .hero{position:relative;isolation:isolate;overflow:hidden;background:#101814}
+body .hero::before{content:'';position:absolute;inset:-4%;z-index:-2;background:url('assets/storefront-hero.jpg') center center/cover no-repeat;transform:scale(1.04);transform-origin:center;animation:storefront-pan 24s ease-in-out infinite alternate;will-change:transform;pointer-events:none}
+body .hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0b1512d9,#0b151299);pointer-events:none}
+@keyframes storefront-pan{0%{transform:scale(1.04) translate3d(-1%,0,0)}50%{transform:scale(1.1) translate3d(0,-.7%,0)}100%{transform:scale(1.16) translate3d(1%,0,0)}}
+@media(max-width:620px){body .hero::before{animation-duration:28s}}
+@media(prefers-reduced-motion:reduce){body .hero::before{animation:none;transform:scale(1.04);will-change:auto}}

@@ -1,7 +1,7 @@
 name: Daily Naver blog sync and Pages deploy
 on:
   schedule:
-    - cron: '0 0 * * *'→ Runs at 00:00 # 09:00 Asia/Seoul
+    - cron: '0 0 * * *' # 09:00 Asia/Seoul
   workflow_dispatch:
   push:
     branches: [main]

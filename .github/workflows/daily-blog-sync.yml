@@ -43,3 +43,23 @@ jobs:
             git commit -m 'Update Naver blog posts and thumbnails'
             git push origin HEAD:main
           fi
+      - name: Prepare public site files
+        run: node scripts/prepare-pages.mjs
+      - name: Upload Pages site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: sync-and-build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the refreshed site
+        id: deployment
+        uses: actions/deploy-pages@v4

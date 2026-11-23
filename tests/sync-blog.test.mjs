@@ -1,7 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {normalizeCatalog,parseCatalogJson,parseRss,replaceJournal,renderList} from '../scripts/sync-blog.mjs';
+import {normalizeCatalog,parseCatalogJson,parseRss,parseRssDates,replaceJournal,renderList} from '../scripts/sync-blog.mjs';
 const post=(id,title='테스트 글')=>({logNo:id,title:encodeURIComponent(title).replace(/%20/g,'+'),addDate:'2026. 11. 16.'});
+test('new posts accept Naver relative dates and prefer exact RSS Korean dates',()=>{
+ const dates=parseRssDates('<rss><item><link>https://blog.naver.com/yhjo0720/123</link><pubDate>Sun, 22 Nov 2026 23:30:00 GMT</pubDate></item></rss>');
+ const pages=[{resultCode:'S',totalCount:1,postList:[{...post('123'),addDate:'21시간 전'}]}];
+ assert.equal(normalizeCatalog(pages,dates)[0].date,'2026.11.23');
+ assert.equal(normalizeCatalog(pages)[0].date,'21시간 전');
+ for(const label of ['5분 전','방금 전','어제']) {
+  pages[0].postList[0].addDate=label;assert.equal(normalizeCatalog(pages)[0].date,label);
+ }
+ pages[0].postList[0].addDate='unexpected response';assert.throws(()=>normalizeCatalog(pages),/Invalid/);
+});
 test('all public pages must be complete and unique',()=>{
  const pages=[{resultCode:'S',totalCount:'2',postList:[post('1')]},{resultCode:'S',totalCount:'2',postList:[post('2')]}];
  assert.equal(normalizeCatalog(pages).length,2);

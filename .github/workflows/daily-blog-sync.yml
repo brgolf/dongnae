@@ -13,6 +13,8 @@ concurrency:
 jobs:
   sync-and-build:
     runs-on: ubuntu-latest
+    outputs:
+      refresh-outcome: ${{ steps.blog-refresh.outcome }}
     timeout-minutes: 15
     permissions:
       contents: write
@@ -63,3 +65,9 @@ jobs:
       - name: Deploy the refreshed site
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Report blog collection failure
+        if: needs.sync-and-build.outputs.refresh-outcome == 'failure'
+        run: |
+          echo '::error::Blog refresh failed. The previous site was deployed to preserve availability. Check the Refresh public blog posts step.'
+          echo '### Blog refresh failed; previous site preserved' >> "$GITHUB_STEP_SUMMARY"
+          exit 1
